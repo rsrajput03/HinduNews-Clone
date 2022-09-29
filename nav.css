@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#nav1 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    margin-top: 10px;
+}
+
+#nav1 div:nth-child(1) a {
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+    border-right: 1px solid gray;
+    text-decoration: none;
+}
+
+#nav1>div>a i {
+    color: black;
+}
+
+#nav1 .nav1-last {
+    color: black;
+}
+
+#nav1 div:last-child input {
+    border: none;
+    background-color: transparent;
+    width: 200px;
+    height: 20px;
+    outline: none;
+    border-left: 1px solid gray;
+    align-items: center;
+    padding: 13px 11px;
+}
+
+#nav1 div:last-child i {
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#nav2 {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#nav2 div {
+    width: 40%;
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#nav2 div a {
+    margin: auto;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+#nav2>img {
+    width: 500px;
+}
+
+#nav2 div a:nth-child(2) {
+    color: gray;
+}
+
+#nav3 {
+    width: 80%;
+    border-bottom: 1px solid gray;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.nav3-I .nav-link {
+    display: inline-flex;
+    border: 0px solid red;
+    padding: 15px;
+}
+
+.nav-link li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    padding: 5px;
+}
+
+.nav-link li {
+    list-style: none;
+}
+
+.nav-link li a:hover {
+    text-decoration: underline;
+}
+
+
+#button a {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#button a:first-child {
+    background-color: #00419b;
+    color: white;
+}
+
+#button a:first-child:hover {
+    text-decoration: underline;
+}
+
+#button a:nth-child(2) {
+    background-color: orange;
+    color: black;
+}
+
+#button a:nth-child(2):hover,
+#button a:last-child:hover {
+    background-color: #00419b;
+    color: white;
+    cursor: pointer;
+}
+
+#button a:last-child {
+    background-color: white;
+    border: 1px solid #00419b;
+    color: #00419b;
+}
+
+#menu {
+    width: 82%;
+    display: flex;
+    margin: auto;
+    position: sticky;
+    top: 0;
+
+}
+
+#menu>div {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+}
+
+#nav4 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#nav4 img {
+    width: 100px;
+}
+
+#nav4 a {
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+}
+
+#nav4 p {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+}
