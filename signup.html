@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #sign-up-screen {
+            border: 0px solid black;
+        }
+
+
+        #sign-up {
+            width: 25%;
+            margin: auto;
+            margin-top: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 20px 40px;
+            border: 0px solid green;
+        }
+
+        #sign-up>div:nth-child(1) {
+            text-align: center;
+            font-family: "Playfair Display", serif;
+            font-size: 18px;
+        }
+
+        #sign-up>div:nth-child(1) a {
+            width: 100%;
+            margin: auto;
+            display: block;
+            text-decoration: none;
+            padding: 10px 10px;
+            margin-top: 10px;
+            border: 1px solid rgba(128, 128, 128, 0.204);
+            color: #333333;
+            font-size: 18px;
+        }
+
+        #sign-up>div:nth-child(1) img {
+            margin-right: 5px;
+        }
+
+        #sign-up>div:nth-child(1) i {
+            margin-right: 10px;
+        }
+
+        #sign-up>div:nth-child(1) a:hover {
+            border: 1px solid gray;
+        }
+
+        .line {
+            position: relative;
+            height: 1px;
+            width: 100%;
+            background-color: #d4d4d4;
+            margin: 30px 0;
+        }
+
+        .line::before {
+            content: 'OR';
+            font-size: 18px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            background-color: #FFF;
+            color: #8b8b8b;
+            padding: 0 20px;
+        }
+
+        #signup-form input {
+            padding: 15px;
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        #label {
+            color: gray;
+            text-align: left;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-bottom: 10px;
+        }
+
+        #button {
+            padding: 15px;
+            width: 100%;
+            font-size: 18px;
+            background-color: #133b5a;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        #sign-up>div:last-child {
+            text-align: center;
+            color: black;
+            font-weight: lighter;
+        }
+
+        #sign-up>div:last-child h2 a {
+            color: black;
+            font-weight: lighter;
+            margin-top: 20px;
+        }
+
+        #sign-up>div:last-child h2 {
+            margin-top: 20px;
+        }
+
+        #agree {
+            border: 0px solid red;
+            text-align: center;
+            padding: 0px;
+            font-family: "Inter", sans-serif;
+            line-height: 22px;
+            text-decoration: none;
+            font-size: 14px;
+            word-spacing: 4px;
+        }
+
+        #agree a {
+            text-decoration: none;
+            color: #6893b0;
+        }
+
+        #login-set {
+            border: 0px solid red;
+            margin-top: 10px;
+            font-family: "Inter", sans-serif;
+        }
+
+        #login-set a {
+            border: 0px solid black;
+            font-size: 18px;
+            text-decoration: none;
+            color: #153c59;
+            margin-top: 20px;
+            font-weight: 400;
+        }
+
+        .next {
+            width: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section id="sign-up-screen">
+        <div id="sign-up">
+            <div>
+                <h2 class="title">Sign up</h2>
+                <a href=""><img
+                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuMDAxNjIgMC44NDcyNzhDMy40MTYxMiAxLjM4OTc4IDIuMDY1MTIgMi41NzYyOCAxLjMxMjYyIDQuMDc3NzhDMS4wNTAxMiA0LjU5NTc4IDAuODYxMTI0IDUuMTQ1MjggMC43NDU2MjQgNS43MTU3OEMwLjQ1ODYyNCA3LjEyOTc4IDAuNjU4MTI0IDguNjM4MjggMS4zMDkxMiA5LjkyNjI4QzEuNzMyNjIgMTAuNzY2MyAyLjM0MTYyIDExLjUxNTMgMy4wNzY2MiAxMi4wOTk4QzMuNzczMTIgMTIuNjUyOCA0LjU4MTYyIDEzLjA2NTggNS40NDI2MiAxMy4yOTMzQzYuNTI3NjIgMTMuNTgzOCA3LjY4MjYyIDEzLjU3NjggOC43NzQ2MiAxMy4zMjgzQzkuNzYxNjMgMTMuMTAwOCAxMC42OTYxIDEyLjYyODMgMTEuNDQxNiAxMS45NDIzQzEyLjIyOTEgMTEuMjE3OCAxMi43OTI2IDEwLjI2NTggMTMuMDkwMSA5LjI0MDI4QzEzLjQxNTYgOC4xMjM3OCAxMy40NTc2IDYuOTMwMjggMTMuMjU0NiA1Ljc4MjI4QzExLjIxNDEgNS43ODIyOCA5LjE3MDEzIDUuNzgyMjggNy4xMjk2MiA1Ljc4MjI4QzcuMTI5NjIgNi42MjkyOCA3LjEyOTYyIDcuNDc2MjggNy4xMjk2MiA4LjMyMzI4QzguMzEyNjIgOC4zMjMyOCA5LjQ5NTYyIDguMzIzMjggMTAuNjc4NiA4LjMyMzI4QzEwLjU0MjEgOS4xMzUyOCAxMC4wNTkxIDkuODc3MjggOS4zNzY2MyAxMC4zMzU4QzguOTQ2MTMgMTAuNjI2MyA4LjQ1MjYyIDEwLjgxMTggNy45NDE2MiAxMC45MDI4QzcuNDMwNjIgMTAuOTkwMyA2Ljg5ODYyIDExLjAwMDggNi4zODc2MiAxMC44OTkzQzUuODY2MTIgMTAuNzk0MyA1LjM3MjYyIDEwLjU3NzMgNC45Mzg2MiAxMC4yNzI4QzQuMjQ1NjIgOS43ODYyOCAzLjcxNzEyIDkuMDc1NzggMy40NDc2MiA4LjI3NDI4QzMuMTcxMTIgNy40NTg3OCAzLjE2NzYyIDYuNTUyMjggMy40NDc2MiA1Ljc0MDI4QzMuNjQzNjIgNS4xNjYyOCAzLjk2NTYyIDQuNjM3NzggNC4zOTI2MiA0LjIwMzc4QzQuOTE3NjIgMy42NjQ3OCA1LjYwMDEyIDMuMjc5NzggNi4zMzg2MiAzLjEyMjI4QzYuOTY4NjMgMi45ODkyOCA3LjYzMzYyIDMuMDEzNzggOC4yNDk2MiAzLjE5OTI4QzguNzc0NjIgMy4zNTY3OCA5LjI1NzYyIDMuNjQ3MjggOS42NTMxMiA0LjAyNTI4QzEwLjA1MjEgMy42MjYyOCAxMC40NTExIDMuMjI3MjggMTAuODUwMSAyLjgyODI4QzExLjA2MDEgMi42MTQ3OCAxMS4yODA2IDIuNDA4MjggMTEuNDgzNiAyLjE4Nzc4QzEwLjg3ODEgMS42Mjc3OCAxMC4xNjQxIDEuMTc2MjggOS4zODcxMyAwLjg4OTI3OEM3Ljk4NzEzIDAuMzcxMjc4IDYuNDEyMTIgMC4zNjA3NzggNS4wMDE2MiAwLjg0NzI3OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik01LjAwMTUgMC44NDcwNzNDNi40MDg1IDAuMzYwNTczIDcuOTg3IDAuMzcxMDczIDkuMzg3IDAuODg1NTczQzEwLjE2NCAxLjE3MjU3IDEwLjg3NDUgMS42MjA1NyAxMS40ODM1IDIuMTg0MDdDMTEuMjgwNSAyLjQwNDU3IDExLjA2IDIuNjExMDcgMTAuODUgMi44MjQ1N0MxMC40NTEgMy4yMjM1NyAxMC4wNTIgMy42MjI1NyA5LjY1MyA0LjAyMTU3QzkuMjU3NSAzLjY0MzU3IDguNzc0NSAzLjM1NjU3IDguMjQ5NSAzLjE5NTU3QzcuNjMzNSAzLjAxMDA3IDYuOTY4NSAyLjk4MjA3IDYuMzM4NSAzLjExODU3QzUuNjAzNSAzLjI3NjA3IDQuOTIxIDMuNjYxMDcgNC4zOTI1IDQuMjAwMDdDMy45NjU1IDQuNjMwNTcgMy42NDM1IDUuMTYyNTcgMy40NDc1IDUuNzM2NTdDMi43MzcgNS4xODM1NyAyLjAyNjUgNC42MzQwNyAxLjMxMjUgNC4wODEwN0MyLjA2NSAyLjU3NjA3IDMuNDE2IDEuMzg5NTcgNS4wMDE1IDAuODQ3MDczWiIgZmlsbD0iI0VBNDMzNSIvPgo8cGF0aCBkPSJNMC43NDkxMzkgNS43MTIxQzAuODY0NjM5IDUuMTQ1MSAxLjA1MzY0IDQuNTkyMSAxLjMxNjE0IDQuMDc0MUMyLjAyNjY0IDQuNjI3MSAyLjczNzE0IDUuMTc2NiAzLjQ1MTE0IDUuNzI5NkMzLjE3MTE0IDYuNTQ1MSAzLjE3MTE0IDcuNDUxNiAzLjQ1MTE0IDguMjYzNkMyLjc0MDY0IDguODE2NiAyLjAzMDE0IDkuMzY5NiAxLjMxOTY0IDkuOTE5MUMwLjY2MTYzOSA4LjYzNDYgMC40NjIxMzkgNy4xMjYxIDAuNzQ5MTM5IDUuNzEyMVoiIGZpbGw9IiNGQkJDMDUiLz4KPHBhdGggZD0iTTcuMTI5NzkgNS43Nzg1NkM5LjE3MDI5IDUuNzc4NTYgMTEuMjE0MyA1Ljc3ODU2IDEzLjI1NDggNS43Nzg1NkMxMy40NTc4IDYuOTIzMDYgMTMuNDEyMyA4LjExNjU2IDEzLjA5MDMgOS4yMzY1NkMxMi43OTI4IDEwLjI2MjEgMTIuMjI5MyAxMS4yMTQxIDExLjQ0MTggMTEuOTM4NkMxMC43NTIzIDExLjQwMzEgMTAuMDYyOCAxMC44Njc2IDkuMzczMjkgMTAuMzMyMUMxMC4wNTU4IDkuODczNTYgMTAuNTM4OCA5LjEzMTU2IDEwLjY3NTMgOC4zMTk1NkM5LjQ5MjI5IDguMzE5NTYgOC4zMDkyOSA4LjMxOTU2IDcuMTI2MjkgOC4zMTk1NkM3LjEyOTc5IDcuNDcyNTYgNy4xMjk3OSA2LjYyNTU2IDcuMTI5NzkgNS43Nzg1NloiIGZpbGw9IiM0Mjg1RjQiLz4KPHBhdGggZD0iTTEuMzEyNSA5LjkyMjU5QzIuMDIzIDkuMzczMDkgMi43MzM1IDguODIwMDkgMy40NDQgOC4yNjcwOUMzLjcxNyA5LjA2ODU5IDQuMjQyIDkuNzc5MDkgNC45MzUgMTAuMjY1NkM1LjM2OSAxMC41NzAxIDUuODY2IDEwLjc4NzEgNi4zODQgMTAuODkyMUM2Ljg5NSAxMC45OTcxIDcuNDIzNSAxMC45ODMxIDcuOTM4IDEwLjg5NTZDOC40NDkgMTAuODA0NiA4Ljk0MjUgMTAuNjE5MSA5LjM3MyAxMC4zMjg2QzEwLjA2MjUgMTAuODY0MSAxMC43NTIgMTEuMzk5NiAxMS40NDE1IDExLjkzNTFDMTAuNjk2IDEyLjYyNDYgOS43NjE1IDEzLjA5MzYgOC43NzQ1IDEzLjMyMTFDNy42ODI1IDEzLjU2OTYgNi41Mjc1IDEzLjU3NjYgNS40NDI1IDEzLjI4NjFDNC41ODE1IDEzLjA1ODYgMy43NzMgMTIuNjQ5MSAzLjA3NjUgMTIuMDkyNkMyLjM0NSAxMS41MTE2IDEuNzM2IDEwLjc2MjYgMS4zMTI1IDkuOTIyNTlaIiBmaWxsPSIjMzRBODUzIi8+Cjwvc3ZnPgo="
+                        alt=""> Continue with Google</a>
+                <a href=""><i class="fa-brands fa-apple"></i>Continue with Apple</a>
+            </div>
+            <div class="line"></div>
+            <form action="">
+                <div id="signup-form">
+                    <div class="input">
+                        <input type="text" placeholder="Enter your email address" id="email">
+                    </div>
+                    <div class="input">
+                        <input type="password" placeholder="Password" class="password" id="password">
+                    </div>
+                    <div>
+                        <label id="label" for="">enter your 10 digit mobile number</label>
+                        <input type="number" name="" id="mobile" placeholder="">
+                    </div>
+                    <button id="button">Sign Up</button>
+                </div>
+            </form>
+            <div id="agree">
+                <p>By signing up, you agree to The Hindu’s <a href="https://www.thehindu.com/termsofuse/"
+                        target="_blank">Terms of Use</a> and <a href="https://www.thehindu.com/privacypolicy/"
+                        target="_blank">Privacy Policy</a></p>
+            </div>
+            <div id="login-set">
+                <p>Already have an account ?</p>
+                <a href="./login.html">Log In <img
+                        src="https://www.thehindu.com/static/content/images/20210115061755/S1/assets/next.png"
+                        class="next"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- javascript -->
+
+    <script>
+        function formObj(e, p, n) {
+            this.email = e;
+            this.password = p;
+            this.mobile = n;
+        }
+
+        let formArr = JSON.parse(localStorage.getItem("signup")) || [];
+        document.getElementById("button").addEventListener("click", function () {
+            formSubmit();
+        });
+
+
+
+        formSubmit = () => {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let mobile = document.getElementById("mobile").value;
+
+            let flag = true;
+            formArr.forEach(function (el) {
+                if (email === el.email || mobile === el.mobile) {
+                    flag = false;
+                }
+            });
+
+            if (flag === false) {
+                alert("User Already Exists");
+                window.location.href = "login.html";
+            } else {
+                let formNew = new formObj(email, password, mobile);
+                formArr.push(formNew);
+                localStorage.setItem("signup", JSON.stringify(formArr));
+                alert("Sign Up Sucessfully");
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</body>
+
+</html>
