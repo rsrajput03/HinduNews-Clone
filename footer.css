@@ -1,0 +1,77 @@
+#footer{
+    padding-top: 20px;
+    
+}
+
+
+
+
+#hindu-img{
+    width: 160px;
+}
+
+#foot1 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    margin-top: 10px;
+}
+
+#foot1 div:nth-child(1) a {
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+    border-right: 1px solid gray;
+    text-decoration: none;
+}
+
+#foot1>div>a i {
+    color: black;
+}
+
+#foot1 .foot1-last {
+    color: black;
+}
+
+#foot1 div:last-child input {
+    border: none;
+    background-color: transparent;
+    width: 200px;
+    height: 20px;
+    outline: none;
+    border-left: 1px solid gray;
+    align-items: center;
+    padding: 13px 11px;
+}
+
+#foot1 div:last-child i {
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#foot2{
+    background-color: white;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+}
+
+#foot2>div{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#foot2>div>h4{
+    color: #88b9d4;
+    margin-bottom: 10px;
+}
+
+#foot2>div>p{
+    font-family: fira-sans;
+    line-height: 30px;
+}
