@@ -1,0 +1,156 @@
+
+ #business {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#business-heading {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+#business-heading>h1 {
+    color: #133b5a;
+}
+
+#business-heading>div {
+    border-bottom: 2px solid #133b5a;
+    width: 100%;
+    height: 100%;
+
+}
+
+#business-container {
+    width: 100%;
+    height: 450px;
+    border: 0px solid red;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#business-container>div {
+    border: 0px solid red;
+    width: 32%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+}
+
+#bs-1 {
+    background-color: white;
+}
+
+
+
+#bs-1>img {
+    width: 100%;
+}
+
+#bs-1>h1 {
+    background-color: white;
+    padding-left: 10px;
+    font-family: "TundraWeb";
+    font-size: 24px;
+    line-height: 27px;
+    letter-spacing: -.5px;
+    color: #282828;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#bs-1>h5 {
+    background-color: white;
+    padding-left: 10px;
+    color: #828282;
+    display: block;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 15px;
+    margin: 0 0 5px;
+    text-align: left;
+}
+
+#bs-1>p {
+    background-color: white;
+    padding-left: 10px;
+    margin: 9px 0 0 0;
+    font-size: 20px;
+    line-height: 22px;
+    color: #505050;
+    font-family: "TundraWeb";
+}
+
+#bs-2 {
+    background-color: white;
+    border: 2px solid blue;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#bs-2>div {
+    background-color: white;
+    display: flex;
+    gap: 20px;
+}
+
+#bs-2>div>p {
+    background-color: white;
+    font-size: 18px;
+}
+
+#bs-3 {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #133b5a;
+}
+
+#bs-3>div {
+    border: 0px solid black;
+    margin: 10px;
+    background-color: transparent;
+    margin-bottom: 1px;
+}
+
+#bs-3>div>h3 {
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+    width: 100%;
+    color: white;
+    line-height: 25px;
+}
+
+#bs-3-hr {
+    margin-left: 0px;
+    width: 100%;
+    margin-top: 15px;
+    border-top: 1px dashed white;
+}
+
+#bs-3>div>h5 {
+    background-color: transparent;
+    font-size: 18px;
+    line-height: 22px;
+    width: 100%;
+    color: white;
+    margin-top: 10px;
+}
+
+#bs-3>div>p {
+    background-color: transparent;
+    font-size: 18px;
+    font-family: tundra-web;
+    margin-top: 10px;
+    line-height: 22px;
+    width: 100%;
+    color: white
+}
