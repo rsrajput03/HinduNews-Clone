@@ -159,24 +159,23 @@
     <!-- javascript -->
 
     <script>
-
         document.getElementById("button").addEventListener("click", function () {
             formSubmit();
         });
 
         function formSubmit() {
-            let formArr = JSON.parse(localStorage.getItem("signup")) || [];
+            let loginarr = JSON.parse(localStorage.getItem("signup")) || [];
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
-            let flag = false;
+            let res = false;
 
-            formArr.forEach(function (el) {
+            loginarr.forEach(function (el) {
                 if (email === el.email && password === el.password) {
-                    flag = true;
+                    res= true;
                 }
             });
 
-            if (flag === true) {
+            if (res === true) {
                 alert("Login Sucessfully");
                 window.location.href = "index.html";
             } else {

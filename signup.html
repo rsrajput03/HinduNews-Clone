@@ -3,7 +3,6 @@
 
 <head>
     <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,7 +94,7 @@
             padding-bottom: 10px;
         }
 
-        #button {
+        #submit-sign {
             padding: 15px;
             width: 100%;
             font-size: 18px;
@@ -172,10 +171,10 @@
                 <a href=""><i class="fa-brands fa-apple"></i>Continue with Apple</a>
             </div>
             <div class="line"></div>
-            <form action="">
+            <form>
                 <div id="signup-form">
                     <div class="input">
-                        <input type="text" placeholder="Enter your email address" id="email">
+                        <input type="email" placeholder="Enter your email address" id="email">
                     </div>
                     <div class="input">
                         <input type="password" placeholder="Password" class="password" id="password">
@@ -184,7 +183,7 @@
                         <label id="label" for="">enter your 10 digit mobile number</label>
                         <input type="number" name="" id="mobile" placeholder="">
                     </div>
-                    <button id="button">Sign Up</button>
+                    <input id="submit-sign" type="submit" value="Signup">
                 </div>
             </form>
             <div id="agree">
@@ -204,40 +203,43 @@
     <!-- javascript -->
 
     <script>
-        function formObj(e, p, n) {
-            this.email = e;
-            this.password = p;
-            this.mobile = n;
-        }
-
-        let formArr = JSON.parse(localStorage.getItem("signup")) || [];
-        document.getElementById("button").addEventListener("click", function () {
-            formSubmit();
-        });
 
 
+        let form = document.querySelector("form");
+        form.addEventListener("submit", add_data);
+        let LsData = JSON.parse(localStorage.getItem("signup")) || [];
 
-        formSubmit = () => {
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-            let mobile = document.getElementById("mobile").value;
+        function add_data(event) {
+            event.preventDefault();
+            if (form.email.value === "" || form.password.value === "" || form.mobile.value === "") {
+                alert("Please fill all the details");
+            }
+            else {
+                let obj = {
+                    email: form.email.value,
+                    password: form.password.value,
+                    mobile: form.mobile.value,
+                };
 
-            let flag = true;
-            formArr.forEach(function (el) {
-                if (email === el.email || mobile === el.mobile) {
-                    flag = false;
+                let res = true;
+                LsData.forEach(function (el) {
+                    if (form.email.value == el.email || form.mobile.value == el.mobile) {
+                        res = false;
+                    }
+                });
+
+                if (res == false) {
+                    alert("User Already Exists");
+                    window.location.href = "login.html";
                 }
-            });
 
-            if (flag === false) {
-                alert("User Already Exists");
-                window.location.href = "login.html";
-            } else {
-                let formNew = new formObj(email, password, mobile);
-                formArr.push(formNew);
-                localStorage.setItem("signup", JSON.stringify(formArr));
-                alert("Sign Up Sucessfully");
-                window.location.href = "login.html";
+                else {
+                    LsData.push(obj);
+                    localStorage.setItem("signup", JSON.stringify(LsData));
+                    alert("Sign Up Sucessfully");
+                    window.location.href = "login.html";
+                }
+
             }
         }
     </script>
